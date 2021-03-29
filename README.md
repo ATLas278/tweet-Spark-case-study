@@ -88,6 +88,9 @@ Of the 214,936 (216,912) available, 25,969 tweets have **quote tweet** values. O
 ![](images/hists.png)
 ![](images/sorted.png)
 
+  
+We note the increased frequency of number of re-tweets around the 40,000 mark. While this may be a natural phenomena, it could be pointing at an automated process, or some other information hidden in this data. This note will be included in plans for further exploration.  
+
 <br> 
 
 **Inferential Statistics for Sampling Means**  
@@ -136,7 +139,7 @@ We are interested in determining whether there is evidence that a tweet labeled 
 
 <br> 
 
-## Conclusion:  
+## Conclusion
 
 The very small p-value indicates rejecting the null hypothesis. Within the *quote tweet* subset of this data, there is evidence to support the alternative hypothesis, that the mean number of re-tweets for *quote tweets* labled *True* for *possibly sensitive* are statistically higher than the mean number of re-tweets for *quote tweets* labeled *False* for *possibly sensitive*. We conclude, based on this sample, that there is evidence that quote tweets tagged as possibly sensitive have a greater average number of retweets. 
 
@@ -147,7 +150,8 @@ note: only one hypothesis test was performed on this data; no significance corre
 _________________________
 <br> 
 
->Bothersome things requiring further exploration: 
+>Bothersome things requiring further exploration:   
+>- The number of retweets around 40,000 requires further analysis.  
 >- This dataset had re-tweet counts greater than zero, only under the root child: quoted_status. This is unexpected and makes inference possible only on this subset of the data.  
 >- The Spark dataframe conversion reduced the number of RDD datapoints from 216,912 to 214,936. This requires further exploration.
 
