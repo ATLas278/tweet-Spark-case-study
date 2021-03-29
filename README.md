@@ -17,22 +17,22 @@
 
 
 # Introduction  
-Back in the day, we bought music in stores! On new music Tuesday, that **Explicit Lyrics** sticker was on the only version we wanted, and it sold out fast. Does Twitter's **Possibly Sensitive** label have a similar effect? We will examine a collection of [Quote Tweets](https://twiends.com/learn/growing-with-quote-tweets) labeled True or False for [Possibley Sensitive](https://help.twitter.com/en/rules-and-policies/media-settings), and compare their average number of retweets.  
+Back in the day, we bought music in stores! On new music Tuesday, that **Explicit Lyrics** sticker was on the only version we wanted, and it sold out fast. Does Twitter's **Possibly Sensitive** label have a similar effect? We will examine a collection of [Quote Tweets](https://twiends.com/learn/growing-with-quote-tweets) labeled True or False for [Possibly Sensitive](https://help.twitter.com/en/rules-and-policies/media-settings), and compare their average number of retweets.  
 
 <br>
 
 ### Twitter allows *sensitive* material     
-> *By appropriately marking your media settings, Twitter can identify [possibly sensitive](https://help.twitter.com/en/rules-and-policies/media-settings) content that other users may not wish to see, such as violence or nudity. If you intend to regularly post such content, we ask that you please adjust your media settings.*
+> *By appropriately marking your media settings, Twitter can identify [possibly sensitive](https://help.twitter.com/en/rules-and-policies/media-settings) content that other users may not wish to see, such as violence or nudity. If you intend to regularly post such content, we ask that you please adjust your media settings. ~Twitter*
 
 <br>
 
 ### The dataset  
-A collection of 214,936 (216,912) French tweets from 2017 during the Macron, Le Pen presidential election. This dataset includes information about [*quote tweets*](https://twiends.com/learn/growing-with-quote-tweets) which are often used as a way to increase both tweet exposure and user followers. We will explore this 25,969 datapoint subset to determine whether [possibly sensitive](https://help.twitter.com/en/rules-and-policies/media-settings) designations increase the number of retweets acheived. The data is in a JSON file and will need to be parsed prior to analysis.
+A collection of 214,936 (216,912 in original JSON file) French tweets from 2017 during the Macron, Le Pen presidential election. This dataset includes information about [*quote tweets*](https://twiends.com/learn/growing-with-quote-tweets) which are often used as a way to increase both tweet exposure and user followers. We will explore this 25,969 datapoint subset to determine whether [possibly sensitive](https://help.twitter.com/en/rules-and-policies/media-settings) designations increase the number of re-tweets acheived. The data is in a JSON file and will need to be parsed prior to analysis.
 
 <br>
 
 ### Pipeline 
-Big Data requires big tools. Utilizing [Docker] allows us to create protected, reliable environment for our work. Through a Docker container, we will use [Pyspark], a [Python] environment for [Apache Spark]. Spark dataframes add a schema to the resilient distributed database, allowing fast computing and the ability to create a [Spark SQL] context, so we can query our data usign SQL--thank you Spark. 
+Big Data requires big tools. Utilizing [Docker](https://www.docker.com/) allows us to create protected, reliable environment for our work. Through a Docker container, we will use [Pyspark](https://spark.apache.org/docs/latest/api/python/index.html), a Python environment for [Apache Spark](https://spark.apache.org/). Spark dataframes add a schema to the resilient distributed database, allowing fast computing and the ability to create a [Spark SQL](https://spark.apache.org/sql/) context, so we can query our data usign SQL--thank you Spark. 
 
 - SQL Query on a temporary table from the Spark dataframe:
 ```sql
@@ -167,3 +167,20 @@ True for Possibly Sensitive:
 
 False for Possibly Sensitive:  
 ![](images/false_cloud.png)
+
+<br>
+
+### Tech Stack
+<br>
+<img src="images/docker.png" alt="drawing" width="100"/>
+<img src="images/spark.png" alt="drawing" width="100"/>
+<img src="images/pyspark.png" alt="drawing" width="200"/>
+<img src="images/sparksql.jpeg" alt="drawing" width="100"/>
+<img src="images/python.jpeg" alt="drawing" width="100"/>
+<img src="images/numpy.png" alt="drawing" width="100"/>
+<img src="images/pandas.png" alt="drawing" width="100"/>
+<img src="images/matplotlib.png" alt="drawing" width="100"/>
+<img src="images/scipy.png" alt="drawing" width="100"/>
+<img src="images/nltk.png" alt="drawing" width="100"/>
+  
+
