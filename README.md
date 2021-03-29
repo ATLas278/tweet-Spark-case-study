@@ -3,21 +3,16 @@
 ![](images/sensitive.jpeg)
 
 - [Do **Possibly Sensitive** Labels Increase Tweet Reach?](#do-possibly-sensitive_designatios-increase-tweet-exposure?)
-  - [Introduction](#introduction)
-    - [Twitter allows *sensitive* material](#twitter-allows-sensitive-material)   
-    - [The Dataset](#the-dataset)
-  - [Pipeline](#your-tasks)  
-    - [Spark Dataframes](#spark-data-frames)
-    - [Spark SQL](#spark-sql)
-    - [Pandas Dataframes](#pandas-dataframes)
-  - [EDA](#EDA)
-  - [Hypothesis Testing](#hypothesis-test) 
-  - [Word Cloud](#word-cloud)
-  - [Conclusion](#conclusion)
-  - [Tech Stack](#tech-stack)
+  - [Introduction](##introduction)  
+  - [Pipeline](##pipeline)    
+  - [EDA](##EDA)  
+  - [Hypothesis Testing](##hypothesis-test) 
+  - [Conclusion](##conclusion)
+  - [Word Cloud](###word-cloud)
+  - [Tech Stack](###tech-stack)
 
 
-# Introduction  
+## Introduction  
 Back in the day, we bought music in stores! On new music Tuesday, that **Explicit Lyrics** sticker was on the only version we wanted, and it sold out fast. Does Twitter's **Possibly Sensitive** label have a similar effect? We will examine a collection of [Quote Tweets](https://twiends.com/learn/growing-with-quote-tweets) labeled True or False for [Possibly Sensitive](https://help.twitter.com/en/rules-and-policies/media-settings), and compare their average number of retweets.  
 
 <br>
@@ -27,12 +22,12 @@ Back in the day, we bought music in stores! On new music Tuesday, that **Explici
 
 <br>
 
-### The dataset  
+## The dataset  
 A collection of 214,936 (216,912 in original JSON file) French tweets from 2017 during the Macron, Le Pen presidential election. This dataset includes information about [*quote tweets*](https://twiends.com/learn/growing-with-quote-tweets) which are often used as a way to increase both tweet exposure and user followers. We will explore this 25,969 datapoint subset to determine whether [possibly sensitive](https://help.twitter.com/en/rules-and-policies/media-settings) designations increase the number of re-tweets acheived. The data is in a JSON file and will need to be parsed prior to analysis.
 
 <br>
 
-### Pipeline 
+## Pipeline 
 Big Data requires big tools. Utilizing [Docker](https://www.docker.com/) allows us to create protected, reliable environment for our work. Through a Docker container, we will use [Pyspark](https://spark.apache.org/docs/latest/api/python/index.html), a Python environment for [Apache Spark](https://spark.apache.org/). Spark dataframes add a schema to the resilient distributed database, allowing fast computing and the ability to create a [Spark SQL](https://spark.apache.org/sql/) context, so we can query our data usign SQL--thank you Spark. 
 
 - SQL Query on a temporary table from the Spark dataframe:
@@ -46,7 +41,7 @@ GROUP BY quoted_status.possibly_sensitive;
 
 <br>
 
-### EDA Exploratory Data Analysis  
+## EDA Exploratory Data Analysis  
 
 Of the 214,936 (216,912) available, 25,969 tweets have **quote tweet** values. Of those, 15,094 have a True or False **possibly sensitive** label. 512 of these quote tweets are labeled True for **possibly sensitive** with an average number of retweets of 3036.85. The datapoints in this **quote tweet** subset that are labeled false for **possibly sensitive** number 14,582 with an average number of retweets of 1278.47.
  
@@ -115,7 +110,7 @@ Of the 214,936 (216,912) available, 25,969 tweets have **quote tweet** values. O
 
 <br> 
  
-### Hypothesis Testing  
+## Hypothesis Testing  
 We are interested in determining whether there is evidence that a tweet labeled as **possibly sensitive** has a statistically significant difference in mean number of tweets. 
 
 - The null hypothesis: There is no statistical difference in the mean number of tweets between the True and False *possibly sensitive* classes in the *quote tweet* subset of the data.   
@@ -135,7 +130,7 @@ We are interested in determining whether there is evidence that a tweet labeled 
       
 <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;\\&space;\alpha&space;=&space;0.05&space;\\&space;\text{power}&space;=&space;0.9996&space;\\&space;\text{difference}&space;=&space;1758.37&space;\\&space;\text{hedges-g&space;effect}&space;=&space;0.2916&space;\\&space;\\&space;H_{null}:&space;\left&space;(\mu_{true}-\mu_{false}&space;\right&space;)&space;\leq&space;0&space;\\&space;H_{alt}:&space;\&space;\left&space;(\mu_{true}-\mu_{false}&space;\right&space;)&space;>&space;0&space;\\&space;\\&space;\text&space;{\textsl{p-value}}&space;=&space;0.00000025" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;\\&space;\alpha&space;=&space;0.05&space;\\&space;\text{power}&space;=&space;0.9996&space;\\&space;\text{difference}&space;=&space;1758.37&space;\\&space;\text{hedges-g&space;effect}&space;=&space;0.2916&space;\\&space;\\&space;H_{null}:&space;\left&space;(\mu_{true}-\mu_{false}&space;\right&space;)&space;\leq&space;0&space;\\&space;H_{alt}:&space;\&space;\left&space;(\mu_{true}-\mu_{false}&space;\right&space;)&space;>&space;0&space;\\&space;\\&space;\text&space;{\textsl{p-value}}&space;=&space;0.00000025" title="\\ \alpha = 0.05 \\ \text{power} = 0.9996 \\ \text{difference} = 1758.37 \\ \text{hedges-g effect} = 0.2916 \\ \\ H_{null}: \left (\mu_{true}-\mu_{false} \right ) \leq 0 \\ H_{alt}: \ \left (\mu_{true}-\mu_{false} \right ) > 0 \\ \\ \text {\textsl{p-value}} = 0.00000025" /></a>
 
-### Conclusion:  
+## Conclusion:  
 
 The very small p-value indicates rejecting the null hypothesis. Within the *quote tweet* subset of this data, there is evidence to support the alternative hypothesis, that the mean number of re-tweets for *quote tweets* labled *True* for *possibly sensitive* are statistically higher than the mean number of re-tweets for *quote tweets* labeled *False* for *possibly sensitive*. We conclude, based on this sample, that there is evidence that quote tweets tagged as possibly sensitive have a greater average number of retweets. 
 
