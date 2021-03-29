@@ -1,8 +1,8 @@
-# Do "Possibly Sensitive" Labels Increase Tweet Exposure?  
+# Do "Possibly Sensitive" Labels Increase Tweet Reach?  
 
 ![](images/sensitive.jpeg)
 
-- [Do **Possibly Sensitive** Labels Increase Tweet Exposure?](#do-possibly-sensitive_designatios-increase-tweet-exposure?)
+- [Do **Possibly Sensitive** Labels Increase Tweet Reach?](#do-possibly-sensitive_designatios-increase-tweet-exposure?)
   - [Introduction](#introduction)
     - [Twitter allows *sensitive* material](#twitter-allows-sensitive-material)   
     - [The Dataset](#the-dataset)
