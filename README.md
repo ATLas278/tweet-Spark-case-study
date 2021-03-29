@@ -2,14 +2,18 @@
 
 ![](images/sensitive.jpeg)
 
-- [Do **Possibly Sensitive** Labels Increase Tweet Reach?](#do-possibly-sensitive_designatios-increase-tweet-exposure?)
-  - [Introduction](##introduction)  
-  - [Pipeline](##pipeline)    
-  - [EDA](##EDA)  
-  - [Hypothesis Testing](##hypothesis-test) 
-  - [Conclusion](##conclusion)
-  - [Word Cloud](###word-cloud)
-  - [Tech Stack](###tech-stack)
+[Introduction](#Introduction) 
+
+
+[Pipeline](#Pipeline)    
+
+
+[EDA](#EDA-Exploratory-Data-Analysis)   
+
+[Hypothesis Testing](#Hypothesis-Testing)   
+
+[Conclusion](#Conclusion) 
+
 
 
 ## Introduction  
@@ -130,11 +134,16 @@ We are interested in determining whether there is evidence that a tweet labeled 
       
 <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;\\&space;\alpha&space;=&space;0.05&space;\\&space;\text{power}&space;=&space;0.9996&space;\\&space;\text{difference}&space;=&space;1758.37&space;\\&space;\text{hedges-g&space;effect}&space;=&space;0.2916&space;\\&space;\\&space;H_{null}:&space;\left&space;(\mu_{true}-\mu_{false}&space;\right&space;)&space;\leq&space;0&space;\\&space;H_{alt}:&space;\&space;\left&space;(\mu_{true}-\mu_{false}&space;\right&space;)&space;>&space;0&space;\\&space;\\&space;\text&space;{\textsl{p-value}}&space;=&space;0.00000025" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;\\&space;\alpha&space;=&space;0.05&space;\\&space;\text{power}&space;=&space;0.9996&space;\\&space;\text{difference}&space;=&space;1758.37&space;\\&space;\text{hedges-g&space;effect}&space;=&space;0.2916&space;\\&space;\\&space;H_{null}:&space;\left&space;(\mu_{true}-\mu_{false}&space;\right&space;)&space;\leq&space;0&space;\\&space;H_{alt}:&space;\&space;\left&space;(\mu_{true}-\mu_{false}&space;\right&space;)&space;>&space;0&space;\\&space;\\&space;\text&space;{\textsl{p-value}}&space;=&space;0.00000025" title="\\ \alpha = 0.05 \\ \text{power} = 0.9996 \\ \text{difference} = 1758.37 \\ \text{hedges-g effect} = 0.2916 \\ \\ H_{null}: \left (\mu_{true}-\mu_{false} \right ) \leq 0 \\ H_{alt}: \ \left (\mu_{true}-\mu_{false} \right ) > 0 \\ \\ \text {\textsl{p-value}} = 0.00000025" /></a>
 
+<br> 
+
 ## Conclusion:  
 
 The very small p-value indicates rejecting the null hypothesis. Within the *quote tweet* subset of this data, there is evidence to support the alternative hypothesis, that the mean number of re-tweets for *quote tweets* labled *True* for *possibly sensitive* are statistically higher than the mean number of re-tweets for *quote tweets* labeled *False* for *possibly sensitive*. We conclude, based on this sample, that there is evidence that quote tweets tagged as possibly sensitive have a greater average number of retweets. 
 
 note: only one hypothesis test was performed on this data; no significance correction was required.
+
+<br>
+
 _________________________
 <br> 
 
