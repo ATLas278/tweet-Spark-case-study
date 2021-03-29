@@ -1,8 +1,8 @@
-# Do **Possibly Sensitive** Designations Increase Tweet Exposure?  
+# Do "Possibly Sensitive" Labels Increase Tweet Exposure?  
 
 ![](images/sensitive.jpeg)
 
-- [Do **Possibly Sensitive** Designations Increase Tweet Exposure?](#do-possibly-sensitive_designatios-increase-tweet-exposure?)
+- [Do **Possibly Sensitive** Labels Increase Tweet Exposure?](#do-possibly-sensitive_designatios-increase-tweet-exposure?)
   - [Introduction](#introduction)
     - [Twitter allows *sensitive* material](#twitter-allows-sensitive-material)   
     - [The Dataset](#the-dataset)
@@ -12,8 +12,8 @@
     - [Pandas Dataframes](#pandas-dataframes)
   - [EDA](#EDA)
   - [Hypothesis Testing](#hypothesis-test) 
-  - [Bayes Rule](#bayes-rule)
   - [Word Cloud](#word-cloud)
+  - [Tech Stack](#tech-stack)
 
 
 # Introduction  
@@ -137,6 +137,8 @@ We are interested in determining whether there is evidence that a tweet labeled 
 Conclusion:  
 
 The very small p-value indicates rejecting the null hypothesis. Within the *quote tweet* subset of this data, there is evidence to support the alternative hypothesis, that the mean number of re-tweets for *quote tweets* labled *True* for *possibly sensitive* are statistically higher than the mean number of re-tweets for *quote tweets* labeled *False* for *possibly sensitive*. We conclude, based on this sample, that there is evidence that quote tweets tagged as possibly sensitive have a greater average number of retweets. 
+
+note: only one hypothesis test was performed on this data; no significance correction was required.
 
 <br> 
 
